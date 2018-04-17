@@ -2,8 +2,11 @@ package com.example.demo.controller;
 
 import com.example.demo.dao.GenerUserMapper;
 import com.example.demo.exceptions.MyException;
+import com.example.demo.model.GenerUser;
 import com.example.demo.model.MyUser;
 import com.example.demo.service.impl.UserServiceImpl;
+import com.example.demo.utils.PageBean;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -16,8 +19,7 @@ import java.beans.Transient;
 public class UserController {
     @Autowired
     UserServiceImpl userService;
-    @Autowired
-    GenerUserMapper generUserMapper;
+
 
     @RequestMapping("/getUserInfo")
 
@@ -30,8 +32,9 @@ public class UserController {
 
     @RequestMapping("/getUserInfos")
 
-    public String getUserInfos() {
-      return   generUserMapper.selectAll().toString();
+    public PageBean<GenerUser> getUserInfos() {
+        PageHelper.startPage(1, 5);
+      return   userService.getAll();
 //        return user.toString();
 
     }
