@@ -1,0 +1,233 @@
+15:07:09.622499  [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on HNSM-20161111JM with PID 7960 (E:\workspace_2018\demo\target\classes started by Administrator in E:\workspace_2018\demo)
+15:07:09.637514  [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+15:07:09.669546  [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4e91d63f: startup date [Tue Apr 17 15:07:09 CST 2018]; root of context hierarchy
+15:07:10.6051482 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8000 (http)
+15:07:10.6051482 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+15:07:10.6361513 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:07:10.6361513 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+15:07:10.6361513 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Program Files\apache-maven-3.5.3\bin;D:\java\jdk1.8.0_65\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;D:\Go\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Local\atom\bin;.]
+15:07:10.7141591 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:07:10.7141591 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1045 ms
+15:07:10.7921669 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:07:10.7921669 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:07:10.7921669 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:07:10.7921669 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:07:10.7921669 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:07:11.3532230 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4e91d63f: startup date [Tue Apr 17 15:07:09 CST 2018]; root of context hierarchy
+15:07:11.4002277 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.getUserInfo(com.example.demo.model.MyUser,org.springframework.validation.BindingResult)
+15:07:11.4002277 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.saveUserInfo(java.lang.String,java.lang.String) throws java.lang.Exception
+15:07:11.4002277 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfos]}" onto public void com.example.demo.controller.UserController.saveUserInfos(java.lang.String,java.lang.String) throws java.lang.Exception
+15:07:11.4002277 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:07:11.4002277 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:07:11.4312308 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:07:11.4312308 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:07:11.4472324 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:07:11.6812558 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:07:11.6812558 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:07:11.6812558 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:07:11.6972574 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+15:07:11.6972574 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:07:11.7122589 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path ''
+15:07:11.7122589 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 2.34 seconds (JVM running for 3.445)
+15:08:58.707499  [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on HNSM-20161111JM with PID 156 (E:\workspace_2018\demo\target\classes started by Administrator in E:\workspace_2018\demo)
+15:08:58.707499  [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+15:08:58.785577  [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3aefe5e5: startup date [Tue Apr 17 15:08:58 CST 2018]; root of context hierarchy
+15:08:59.6741466 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8000 (http)
+15:08:59.6741466 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+15:08:59.6901482 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:08:59.6901482 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+15:08:59.6901482 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Program Files\apache-maven-3.5.3\bin;D:\java\jdk1.8.0_65\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;D:\Go\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Local\atom\bin;.]
+15:08:59.7371529 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:08:59.7371529 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 952 ms
+15:08:59.8151607 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:08:59.8151607 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:08:59.8151607 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:08:59.8151607 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:08:59.8151607 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:09:00.4072199 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3aefe5e5: startup date [Tue Apr 17 15:08:58 CST 2018]; root of context hierarchy
+15:09:00.4392231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.getUserInfo(com.example.demo.model.MyUser,org.springframework.validation.BindingResult)
+15:09:00.4392231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.saveUserInfo(java.lang.String,java.lang.String) throws java.lang.Exception
+15:09:00.4392231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfos]}" onto public void com.example.demo.controller.UserController.saveUserInfos(java.lang.String,java.lang.String) throws java.lang.Exception
+15:09:00.4392231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:09:00.4392231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:09:00.4702262 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:09:00.4702262 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:09:00.5012293 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:09:00.6412433 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:09:00.6412433 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:09:00.6412433 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:09:00.6412433 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+15:09:00.6572449 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:09:00.6572449 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path ''
+15:09:00.6732465 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 2.309 seconds (JVM running for 2.801)
+15:09:11.26713059 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:09:11.26713059 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+15:09:11.28313075 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+15:09:11.34513137 [http-nio-8000-exec-1] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+15:09:11.50113293 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/saveUserInfos
+15:09:11.50113293 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:09:11.50113293 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:09:11.50113293 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.UserController.saveUserInfos
+15:09:11.50113293 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - ARGS : [lisix, san]
+15:09:11.53213324 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - RESPONSE : null
+15:09:11.53213324 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - SPEND TIME : 31
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/saveUserInfo
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.UserController.saveUserInfo
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - ARGS : [lisix, san]
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - RESPONSE : lisix san
+15:09:24.34026132 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
+15:15:04.775640  [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on HNSM-20161111JM with PID 908 (E:\workspace_2018\demo\target\classes started by Administrator in E:\workspace_2018\demo)
+15:15:04.775640  [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+15:15:04.806671  [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35ef1869: startup date [Tue Apr 17 15:15:04 CST 2018]; root of context hierarchy
+15:15:05.6011466 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8000 (http)
+15:15:05.6171482 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+15:15:05.6171482 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:15:05.6171482 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+15:15:05.6171482 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Program Files\apache-maven-3.5.3\bin;D:\java\jdk1.8.0_65\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;D:\Go\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Local\atom\bin;.]
+15:15:05.6791544 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:15:05.6791544 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 873 ms
+15:15:05.7571622 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:15:05.7571622 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:15:05.7571622 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:15:05.7571622 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:15:05.7571622 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:15:06.3352200 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35ef1869: startup date [Tue Apr 17 15:15:04 CST 2018]; root of context hierarchy
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getMessage],methods=[GET]}" onto public java.lang.String com.example.demo.controller.UserController.getMessage()
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.getUserInfo(com.example.demo.model.MyUser,org.springframework.validation.BindingResult)
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfos]}" onto public void com.example.demo.controller.UserController.saveUserInfos(java.lang.String,java.lang.String) throws java.lang.Exception
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/greeting],methods=[GET]}" onto public java.lang.String com.example.demo.controller.UserController.greeting(java.lang.String,org.springframework.ui.Model)
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.saveUserInfo(java.lang.String,java.lang.String) throws java.lang.Exception
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:15:06.3662231 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:15:06.3972262 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:15:06.3972262 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:15:06.4282293 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:15:06.5062371 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+15:15:06.6782543 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:15:06.6782543 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:15:06.6782543 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:15:06.6782543 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+15:15:06.6932558 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:15:06.7092574 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path ''
+15:15:06.7092574 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 2.434 seconds (JVM running for 2.907)
+15:15:16.88012745 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:15:16.88012745 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+15:15:16.88012745 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 0 ms
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/greeting
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.UserController.greeting
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - ARGS : [World, {}]
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - RESPONSE : greeting
+15:15:16.91112776 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
+15:17:02.871437  [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on HNSM-20161111JM with PID 7660 (E:\workspace_2018\demo\target\classes started by Administrator in E:\workspace_2018\demo)
+15:17:02.871437  [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+15:17:02.917483  [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7ce3cb8e: startup date [Tue Apr 17 15:17:02 CST 2018]; root of context hierarchy
+15:17:03.8071373 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8000 (http)
+15:17:03.8071373 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+15:17:03.8221388 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:17:03.8221388 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+15:17:03.8221388 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Program Files\apache-maven-3.5.3\bin;D:\java\jdk1.8.0_65\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;D:\Go\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Local\atom\bin;.]
+15:17:03.8691435 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:17:03.8691435 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 952 ms
+15:17:03.9471513 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:17:03.9471513 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:17:03.9471513 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:17:03.9471513 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:17:03.9471513 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:17:04.5552121 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7ce3cb8e: startup date [Tue Apr 17 15:17:02 CST 2018]; root of context hierarchy
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getMessage],methods=[GET]}" onto public java.lang.String com.example.demo.controller.GreetingController.getMessage()
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/greeting],methods=[GET]}" onto public java.lang.String com.example.demo.controller.GreetingController.greeting(java.lang.String,org.springframework.ui.Model)
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.getUserInfo(com.example.demo.model.MyUser,org.springframework.validation.BindingResult)
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.saveUserInfo(java.lang.String,java.lang.String) throws java.lang.Exception
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfos]}" onto public void com.example.demo.controller.UserController.saveUserInfos(java.lang.String,java.lang.String) throws java.lang.Exception
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:17:04.5872153 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:17:04.6182184 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:17:04.6182184 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:17:04.6492215 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:17:04.7112277 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+15:17:04.8522418 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:17:04.8522418 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:17:04.8522418 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:17:04.8672433 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+15:17:04.8672433 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:17:04.8832449 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path ''
+15:17:04.8832449 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 2.293 seconds (JVM running for 2.801)
+15:17:22.26219828 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:17:22.26219828 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+15:17:22.27819844 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/greeting
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.GreetingController.greeting
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - ARGS : [tom, {}]
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - RESPONSE : greeting
+15:17:22.29419860 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
+15:17:47.695624  [main] INFO  com.example.demo.DemoApplication - Starting DemoApplication on HNSM-20161111JM with PID 2380 (E:\workspace_2018\demo\target\classes started by Administrator in E:\workspace_2018\demo)
+15:17:47.695624  [main] INFO  com.example.demo.DemoApplication - No active profile set, falling back to default profiles: default
+15:17:47.758687  [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4386f16: startup date [Tue Apr 17 15:17:47 CST 2018]; root of context hierarchy
+15:17:48.5381467 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8000 (http)
+15:17:48.5381467 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+15:17:48.5531482 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:17:48.5531482 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.28
+15:17:48.5531482 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Program Files\apache-maven-3.5.3\bin;D:\java\jdk1.8.0_65\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;D:\Go\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Local\atom\bin;.]
+15:17:48.6001529 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:17:48.6001529 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 842 ms
+15:17:48.7091638 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+15:17:48.7091638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:17:48.7091638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:17:48.7091638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:17:48.7091638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:17:49.2872216 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4386f16: startup date [Tue Apr 17 15:17:47 CST 2018]; root of context hierarchy
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getMessage],methods=[GET]}" onto public java.lang.String com.example.demo.controller.GreetingController.getMessage()
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/greeting],methods=[GET]}" onto public java.lang.String com.example.demo.controller.GreetingController.greeting(java.lang.String,org.springframework.ui.Model)
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.getUserInfo(com.example.demo.model.MyUser,org.springframework.validation.BindingResult)
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfo]}" onto public java.lang.String com.example.demo.controller.UserController.saveUserInfo(java.lang.String,java.lang.String) throws java.lang.Exception
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/saveUserInfos]}" onto public void com.example.demo.controller.UserController.saveUserInfos(java.lang.String,java.lang.String) throws java.lang.Exception
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:17:49.3182247 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:17:49.3652294 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:17:49.3652294 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:17:49.3962325 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:17:49.4432372 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+15:17:49.5832512 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:17:49.5832512 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:17:49.5992528 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:17:49.5992528 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+15:17:49.6142543 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:17:49.6142543 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8000 (http) with context path ''
+15:17:49.6142543 [main] INFO  com.example.demo.DemoApplication - Started DemoApplication in 2.402 seconds (JVM running for 2.907)
+15:17:53.7176646 [http-nio-8000-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+15:17:53.7336662 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+15:17:53.7336662 [http-nio-8000-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 0 ms
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/greeting
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.GreetingController.greeting
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - ARGS : [tom, {}]
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - RESPONSE : greeting
+15:17:53.7646693 [http-nio-8000-exec-1] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/greeting
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.GreetingController.greeting
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - ARGS : [tom, {}]
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - RESPONSE : greeting
+15:17:55.0748003 [http-nio-8000-exec-3] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/greeting
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.GreetingController.greeting
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - ARGS : [tom, {}]
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - RESPONSE : greeting
+15:26:09.767502696 [http-nio-8000-exec-7] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - URL : http://localhost:8000/getMessage
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - HTTP_METHOD : GET
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - IP : 0:0:0:0:0:0:0:1
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - CLASS_METHOD : com.example.demo.controller.GreetingController.getMessage
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - ARGS : []
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - RESPONSE : greeting
+15:26:34.619527548 [http-nio-8000-exec-10] INFO  com.example.demo.utils.WebLog - SPEND TIME : 0
