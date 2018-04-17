@@ -1,6 +1,6 @@
-package com.example.demo.dao;
+package com.hxfeng.springbootdemo.dao;
 
-import com.example.demo.model.GenerUser;
+import com.hxfeng.springbootdemo.model.GenerUser;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.hxfeng.springbootdemo.service;
 
 
-import com.example.demo.model.MyUser;
+import com.hxfeng.springbootdemo.model.MyUser;
 
 public interface UserService {
     public MyUser getUser(int id);

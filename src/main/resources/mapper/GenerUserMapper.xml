@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.example.demo.dao.GenerUserMapper" >
-  <resultMap id="BaseResultMap" type="com.example.demo.model.GenerUser" >
+<mapper namespace="com.hxfeng.springbootdemo.dao.GenerUserMapper" >
+  <resultMap id="BaseResultMap" type="com.hxfeng.springbootdemo.model.GenerUser" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -19,13 +19,13 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.example.demo.model.GenerUser" >
+  <insert id="insert" parameterType="com.hxfeng.springbootdemo.model.GenerUser" >
     insert into user (id, password, name
       )
     values (#{id,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.demo.model.GenerUser" >
+  <insert id="insertSelective" parameterType="com.hxfeng.springbootdemo.model.GenerUser" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.model.GenerUser" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.hxfeng.springbootdemo.model.GenerUser" >
     update user
     <set >
       <if test="password != null" >
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.demo.model.GenerUser" >
+  <update id="updateByPrimaryKey" parameterType="com.hxfeng.springbootdemo.model.GenerUser" >
     update user
     set password = #{password,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR}

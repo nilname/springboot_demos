@@ -1,19 +1,15 @@
-package com.example.demo.controller;
+package com.hxfeng.springbootdemo.controller;
 
-import com.example.demo.dao.GenerUserMapper;
-import com.example.demo.exceptions.MyException;
-import com.example.demo.model.GenerUser;
-import com.example.demo.model.MyUser;
-import com.example.demo.service.impl.UserServiceImpl;
-import com.example.demo.utils.PageBean;
+import com.hxfeng.springbootdemo.exceptions.MyException;
+import com.hxfeng.springbootdemo.model.GenerUser;
+import com.hxfeng.springbootdemo.model.MyUser;
+import com.hxfeng.springbootdemo.service.impl.UserServiceImpl;
+import com.hxfeng.springbootdemo.utils.PageBean;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.beans.Transient;
 
 @RestController
 public class UserController {

@@ -1,4 +1,4 @@
-package com.example.demo.utils;
+package com.hxfeng.springbootdemo.utils;
 
 
 import com.github.pagehelper.Page;

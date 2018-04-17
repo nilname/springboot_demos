@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.hxfeng.springbootdemo.model;
 
 public class MyUser {
     String name;

@@ -1,7 +1,7 @@
-package com.example.demo.dao;
+package com.hxfeng.springbootdemo.dao;
 
 
-import com.example.demo.model.MyUser;
+import com.hxfeng.springbootdemo.model.MyUser;
 import org.springframework.stereotype.Repository;
 
 @Repository

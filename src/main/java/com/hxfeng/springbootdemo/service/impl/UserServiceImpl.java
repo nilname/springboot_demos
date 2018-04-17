@@ -1,14 +1,13 @@
-package com.example.demo.service.impl;
+package com.hxfeng.springbootdemo.service.impl;
 
 
-import com.example.demo.dao.GenerUserMapper;
-import com.example.demo.dao.UserDao;
-import com.example.demo.model.GenerUser;
-import com.example.demo.model.MyUser;
-import com.example.demo.service.UserService;
-import com.example.demo.utils.PageBean;
+import com.hxfeng.springbootdemo.dao.GenerUserMapper;
+import com.hxfeng.springbootdemo.dao.UserDao;
+import com.hxfeng.springbootdemo.model.GenerUser;
+import com.hxfeng.springbootdemo.model.MyUser;
+import com.hxfeng.springbootdemo.service.UserService;
+import com.hxfeng.springbootdemo.utils.PageBean;
 import com.github.pagehelper.PageHelper;
-import com.sun.tools.javah.Gen;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
