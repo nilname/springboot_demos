@@ -2,6 +2,8 @@ package com.example.demo.dao;
 
 import com.example.demo.model.GenerUser;
 
+import java.util.ArrayList;
+
 public interface GenerUserMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,5 @@ public interface GenerUserMapper {
     int updateByPrimaryKeySelective(GenerUser record);
 
     int updateByPrimaryKey(GenerUser record);
+    ArrayList<GenerUser> selectAll();
 }

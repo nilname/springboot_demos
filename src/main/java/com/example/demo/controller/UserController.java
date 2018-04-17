@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.GenerUserMapper;
 import com.example.demo.exceptions.MyException;
 import com.example.demo.model.MyUser;
 import com.example.demo.service.impl.UserServiceImpl;
@@ -15,12 +16,23 @@ import java.beans.Transient;
 public class UserController {
     @Autowired
     UserServiceImpl userService;
+    @Autowired
+    GenerUserMapper generUserMapper;
 
     @RequestMapping("/getUserInfo")
 
     public String getUserInfo(MyUser user, BindingResult result) {
-        userService.getUser(1);
+        user = userService.getUser(1);
         return user.toString();
+
+    }
+
+
+    @RequestMapping("/getUserInfos")
+
+    public String getUserInfos() {
+      return   generUserMapper.selectAll().toString();
+//        return user.toString();
 
     }
 
