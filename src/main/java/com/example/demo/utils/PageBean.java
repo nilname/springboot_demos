@@ -1,94 +1,349 @@
 package com.example.demo.utils;
 
 
+import com.github.pagehelper.Page;
+
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
-public class PageBean<T> {
-    // 当前页
-    private Integer currentPage = 1;
-    // 每页显示的总条数
-    private Integer pageSize = 10;
-    // 总条数
-    private Integer totalNum;
-    // 是否有下一页
-    private Integer isMore;
-    // 总页数
-    private Integer totalPage;
-    // 开始索引
-    private Integer startIndex;
-    // 分页结果
-    private List<T> items;
+public class PageBean<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private int pageNum;
+    private int pageSize;
+    private int size;
+    private int startRow;
+    private int endRow;
+    private long total;
+    private int pages;
+    private List<T> list;
+    private int prePage;
+    private int nextPage;
+    private boolean isFirstPage;
+    private boolean isLastPage;
+    private boolean hasPreviousPage;
+    private boolean hasNextPage;
+    private int navigatePages;
+    private int[] navigatepageNums;
+    private int navigateFirstPage;
+    private int navigateLastPage;
 
     public PageBean() {
-        super();
+        this.isFirstPage = false;
+        this.isLastPage = false;
+        this.hasPreviousPage = false;
+        this.hasNextPage = false;
     }
-    public PageBean(List list) {
-        super();
-        this.items=list;
+
+    public PageBean(List<T> list) {
+        this(list, 8);
     }
-    public PageBean(Integer currentPage, Integer pageSize, Integer totalNum) {
-        super();
-        this.currentPage = currentPage;
+
+    public PageBean(List<T> list, int navigatePages) {
+        this.isFirstPage = false;
+        this.isLastPage = false;
+        this.hasPreviousPage = false;
+        this.hasNextPage = false;
+        if (list instanceof Page) {
+            Page page = (Page) list;
+            this.pageNum = page.getPageNum();
+            this.pageSize = page.getPageSize();
+            this.pages = page.getPages();
+            this.list = page;
+            this.size = page.size();
+            this.total = page.getTotal();
+            if (this.size == 0) {
+                this.startRow = 0;
+                this.endRow = 0;
+            } else {
+                this.startRow = page.getStartRow() + 1;
+                this.endRow = this.startRow - 1 + this.size;
+            }
+        } else if (list instanceof Collection) {
+            this.pageNum = 1;
+            this.pageSize = list.size();
+            this.pages = this.pageSize > 0 ? 1 : 0;
+            this.list = list;
+            this.size = list.size();
+            this.total = (long) list.size();
+            this.startRow = 0;
+            this.endRow = list.size() > 0 ? list.size() - 1 : 0;
+        }
+
+        if (list instanceof Collection) {
+            this.navigatePages = navigatePages;
+            this.calcNavigatepageNums();
+            this.calcPage();
+            this.judgePageBoudary();
+        }
+
+    }
+
+    private void calcNavigatepageNums() {
+        int startNum;
+        if (this.pages <= this.navigatePages) {
+            this.navigatepageNums = new int[this.pages];
+
+            for (startNum = 0; startNum < this.pages; ++startNum) {
+                this.navigatepageNums[startNum] = startNum + 1;
+            }
+        } else {
+            this.navigatepageNums = new int[this.navigatePages];
+            startNum = this.pageNum - this.navigatePages / 2;
+            int endNum = this.pageNum + this.navigatePages / 2;
+            int i;
+            if (startNum < 1) {
+                startNum = 1;
+
+                for (i = 0; i < this.navigatePages; ++i) {
+                    this.navigatepageNums[i] = startNum++;
+                }
+            } else if (endNum > this.pages) {
+                endNum = this.pages;
+
+                for (i = this.navigatePages - 1; i >= 0; --i) {
+                    this.navigatepageNums[i] = endNum--;
+                }
+            } else {
+                for (i = 0; i < this.navigatePages; ++i) {
+                    this.navigatepageNums[i] = startNum++;
+                }
+            }
+        }
+
+    }
+
+    private void calcPage() {
+        if (this.navigatepageNums != null && this.navigatepageNums.length > 0) {
+            this.navigateFirstPage = this.navigatepageNums[0];
+            this.navigateLastPage = this.navigatepageNums[this.navigatepageNums.length - 1];
+            if (this.pageNum > 1) {
+                this.prePage = this.pageNum - 1;
+            }
+
+            if (this.pageNum < this.pages) {
+                this.nextPage = this.pageNum + 1;
+            }
+        }
+
+    }
+
+    private void judgePageBoudary() {
+        this.isFirstPage = this.pageNum == 1;
+        this.isLastPage = this.pageNum == this.pages || this.pages == 0;
+        this.hasPreviousPage = this.pageNum > 1;
+        this.hasNextPage = this.pageNum < this.pages;
+    }
+
+    public int getPageNum() {
+        return this.pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public int getPageSize() {
+        return this.pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
-        this.totalNum = totalNum;
-        this.totalPage = (this.totalNum+this.pageSize-1)/this.pageSize;
-        this.startIndex = (this.currentPage-1)*this.pageSize;
-        this.isMore = this.currentPage >= this.totalPage?0:1;
     }
 
-    public Integer getCurrentPage() {
-        return currentPage;
+    public int getSize() {
+        return this.size;
     }
 
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public void setSize(int size) {
+        this.size = size;
     }
 
-    public Integer getPageSize() {
-        return pageSize;
+    public int getStartRow() {
+        return this.startRow;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setStartRow(int startRow) {
+        this.startRow = startRow;
     }
 
-    public Integer getTotalNum() {
-        return totalNum;
+    public int getEndRow() {
+        return this.endRow;
     }
 
-    public void setTotalNum(Integer totalNum) {
-        this.totalNum = totalNum;
+    public void setEndRow(int endRow) {
+        this.endRow = endRow;
     }
 
-    public Integer getIsMore() {
-        return isMore;
+    public long getTotal() {
+        return this.total;
     }
 
-    public void setIsMore(Integer isMore) {
-        this.isMore = isMore;
+    public void setTotal(long total) {
+        this.total = total;
     }
 
-    public Integer getTotalPage() {
-        return totalPage;
+    public int getPages() {
+        return this.pages;
     }
 
-    public void setTotalPage(Integer totalPage) {
-        this.totalPage = totalPage;
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
-    public Integer getStartIndex() {
-        return startIndex;
+    public List<T> getList() {
+        return this.list;
     }
 
-    public void setStartIndex(Integer startIndex) {
-        this.startIndex = startIndex;
+    public void setList(List<T> list) {
+        this.list = list;
     }
 
-    public List<T> getItems() {
-        return items;
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    public int getFirstPage() {
+        return this.navigateFirstPage;
     }
 
-    public void setItems(List<T> items) {
-        this.items = items;
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    public void setFirstPage(int firstPage) {
+        this.navigateFirstPage = firstPage;
+    }
+
+    public int getPrePage() {
+        return this.prePage;
+    }
+
+    public void setPrePage(int prePage) {
+        this.prePage = prePage;
+    }
+
+    public int getNextPage() {
+        return this.nextPage;
+    }
+
+    public void setNextPage(int nextPage) {
+        this.nextPage = nextPage;
+    }
+
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    public int getLastPage() {
+        return this.navigateLastPage;
+    }
+
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    public void setLastPage(int lastPage) {
+        this.navigateLastPage = lastPage;
+    }
+
+    public boolean isIsFirstPage() {
+        return this.isFirstPage;
+    }
+
+    public void setIsFirstPage(boolean isFirstPage) {
+        this.isFirstPage = isFirstPage;
+    }
+
+    public boolean isIsLastPage() {
+        return this.isLastPage;
+    }
+
+    public void setIsLastPage(boolean isLastPage) {
+        this.isLastPage = isLastPage;
+    }
+
+    public boolean isHasPreviousPage() {
+        return this.hasPreviousPage;
+    }
+
+    public void setHasPreviousPage(boolean hasPreviousPage) {
+        this.hasPreviousPage = hasPreviousPage;
+    }
+
+    public boolean isHasNextPage() {
+        return this.hasNextPage;
+    }
+
+    public void setHasNextPage(boolean hasNextPage) {
+        this.hasNextPage = hasNextPage;
+    }
+
+    public int getNavigatePages() {
+        return this.navigatePages;
+    }
+
+    public void setNavigatePages(int navigatePages) {
+        this.navigatePages = navigatePages;
+    }
+
+    public int[] getNavigatepageNums() {
+        return this.navigatepageNums;
+    }
+
+    public void setNavigatepageNums(int[] navigatepageNums) {
+        this.navigatepageNums = navigatepageNums;
+    }
+
+    public int getNavigateFirstPage() {
+        return this.navigateFirstPage;
+    }
+
+    public int getNavigateLastPage() {
+        return this.navigateLastPage;
+    }
+
+    public void setNavigateFirstPage(int navigateFirstPage) {
+        this.navigateFirstPage = navigateFirstPage;
+    }
+
+    public void setNavigateLastPage(int navigateLastPage) {
+        this.navigateLastPage = navigateLastPage;
+    }
+
+    public String toString() {
+        StringBuffer sb = new StringBuffer("PageInfo{");
+        sb.append("pageNum=").append(this.pageNum);
+        sb.append(", pageSize=").append(this.pageSize);
+        sb.append(", size=").append(this.size);
+        sb.append(", startRow=").append(this.startRow);
+        sb.append(", endRow=").append(this.endRow);
+        sb.append(", total=").append(this.total);
+        sb.append(", pages=").append(this.pages);
+        sb.append(", list=").append(this.list);
+        sb.append(", prePage=").append(this.prePage);
+        sb.append(", nextPage=").append(this.nextPage);
+        sb.append(", isFirstPage=").append(this.isFirstPage);
+        sb.append(", isLastPage=").append(this.isLastPage);
+        sb.append(", hasPreviousPage=").append(this.hasPreviousPage);
+        sb.append(", hasNextPage=").append(this.hasNextPage);
+        sb.append(", navigatePages=").append(this.navigatePages);
+        sb.append(", navigateFirstPage").append(this.navigateFirstPage);
+        sb.append(", navigateLastPage").append(this.navigateLastPage);
+        sb.append(", navigatepageNums=");
+        if (this.navigatepageNums == null) {
+            sb.append("null");
+        } else {
+            sb.append('[');
+
+            for (int i = 0; i < this.navigatepageNums.length; ++i) {
+                sb.append(i == 0 ? "" : ", ").append(this.navigatepageNums[i]);
+            }
+
+            sb.append(']');
+        }
+
+        sb.append('}');
+        return sb.toString();
     }
 }
