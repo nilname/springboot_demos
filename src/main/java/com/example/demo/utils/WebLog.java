@@ -20,7 +20,9 @@ import java.util.Arrays;
 @Aspect
 @Component
 public class WebLog {
-
+    /**
+     * 切面日志
+     */
     private Logger logger = LoggerFactory.getLogger(getClass().getName());
 
     ThreadLocal<Long> startTime = new ThreadLocal<>();
