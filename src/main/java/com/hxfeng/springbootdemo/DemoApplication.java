@@ -10,16 +10,12 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @MapperScan("com.hxfeng.springbootdemo")
 @ComponentScan(basePackages = {"com.hxfeng.springbootdemo.service.impl"})
-public class DemoApplication extends SpringBootServletInitializer {
+public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(DemoApplication.class);
-    }
 
 }
 
