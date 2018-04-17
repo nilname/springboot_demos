@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
     @Autowired
@@ -26,13 +28,18 @@ public class UserController {
     }
 
 
-    @RequestMapping("/getUserInfos")
+    @RequestMapping("/getUserInfoByPage")
 
-    public PageBean<GenerUser> getUserInfos() {
+    public PageBean<GenerUser> getUserInfoByPage(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize) {
         PageHelper.startPage(1, 5);
-      return   userService.getAll();
-//        return user.toString();
+        return userService.getAllByPage(pageNum, pageSize);
+    }
 
+
+    @RequestMapping("/getAllUserInfo")
+
+    public List<GenerUser> getAllUserInfo() {
+        return userService.getAlls();
     }
 
     @RequestMapping("/saveUserInfo")

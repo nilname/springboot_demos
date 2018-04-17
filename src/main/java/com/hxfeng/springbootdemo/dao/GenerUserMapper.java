@@ -1,9 +1,11 @@
 package com.hxfeng.springbootdemo.dao;
 
 import com.hxfeng.springbootdemo.model.GenerUser;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface GenerUserMapper {
     int deleteByPrimaryKey(Integer id);
 

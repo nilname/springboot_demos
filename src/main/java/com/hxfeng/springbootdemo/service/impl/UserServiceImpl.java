@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
     @Autowired
     GenerUserMapper generUserMapper;
+
     @Override
     public MyUser getUser(int id) {
         return userDao.getUserById(id);
@@ -30,10 +31,14 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public PageBean<GenerUser> getAll(){
-        PageHelper.startPage(1, 5);
+    public PageBean<GenerUser> getAllByPage(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
 
-        List<GenerUser> getallinfo =  generUserMapper.selectAll();
+        List<GenerUser> getallinfo = generUserMapper.selectAll();
         return new PageBean<GenerUser>(getallinfo);
+    }
+
+    public List<GenerUser> getAlls() {
+        return generUserMapper.selectAll();
     }
 }
