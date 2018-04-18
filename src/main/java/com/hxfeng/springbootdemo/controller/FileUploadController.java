@@ -4,6 +4,8 @@ package com.hxfeng.springbootdemo.controller;
  * Created by fangqing on 4/17/18.
  */
 
+import com.hxfeng.springbootdemo.configure.FileSpecificConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,11 +13,16 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sound.midi.SysexMessage;
 import java.io.*;
 import java.util.List;
 
 @Controller
 public class FileUploadController {
+
+
+    @Autowired
+    FileSpecificConfig fileSpecificConfig;
 
     /*
      * 获取file.html页面
@@ -38,7 +45,7 @@ public class FileUploadController {
         int size = (int) file.getSize();
         System.out.println(fileName + "-->" + size);
 
-        String path = "/home/fangqing/";
+        String path = fileSpecificConfig.getFilePath();
         File dest = new File(path + "/" + fileName);
         if (!dest.getParentFile().exists()) { //判断文件父目录是否存在
             dest.getParentFile().mkdir();
@@ -57,19 +64,8 @@ public class FileUploadController {
         }
     }
 
-//    /*
-//         * 获取multifile.html页面
-//         */
-//    @RequestMapping("multifile")
-//    public String multifile() {
-//        return "/multifile";
-//    }
-
     /**
      * 实现多文件上传
-     * */
-    /**
-     * public @ResponseBody String multifileUpload(@RequestParam("fileName")List<MultipartFile> files)
      */
     @RequestMapping(value = "multifileUpload", method = RequestMethod.POST)
     @ResponseBody
@@ -81,7 +77,7 @@ public class FileUploadController {
             return "false";
         }
 
-        String path = "/home/fangqing/multifile";
+        String path = fileSpecificConfig.getFilePath();
 
         for (MultipartFile file : files) {
             String fileName = file.getOriginalFilename();
@@ -109,11 +105,12 @@ public class FileUploadController {
 
 
     @RequestMapping("download")
-    public String downLoad(HttpServletResponse response){
-        String filename="xiaobao.rar";
-        String filePath = "/home/fangqing/multifile" ;
+    public String downLoad(HttpServletResponse response) {
+        System.out.println(fileSpecificConfig.getFileName() + fileSpecificConfig.getFilePath());
+        String filename = fileSpecificConfig.getFileName();
+        String filePath = fileSpecificConfig.getFilePath();
         File file = new File(filePath + "/" + filename);
-        if(file.exists()){ //判断文件父目录是否存在
+        if (file.exists()) { //判断文件父目录是否存在
             response.setContentType("application/force-download");
             response.setHeader("Content-Disposition", "attachment;fileName=" + filename);
 
@@ -127,7 +124,7 @@ public class FileUploadController {
                 fis = new FileInputStream(file);
                 bis = new BufferedInputStream(fis);
                 int i = bis.read(buffer);
-                while(i != -1){
+                while (i != -1) {
                     os.write(buffer);
                     i = bis.read(buffer);
                 }
