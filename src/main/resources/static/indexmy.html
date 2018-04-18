@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body style="align-content: center">
+<div style="position:fixed;left:50%;top:50%;">
+    <p>Get your greeting <a href="/greeting">here</a></p>
+
+    <button id="button1">getMessage</button>
+    <button id="button2">about p</button>
+    <button id="user">get user info</button>
+
+    <div >
+        <form role="form">
+            <div class="form-group">
+                <label for="name">名称</label>
+                <input type="text" class="form-control" id="name" placeholder="请输入名称">
+            </div>
+            <div class="form-group">
+                <label for="inputfile">文件输入</label>
+                <input type="file" id="inputfile">
+                <p class="help-block">这里是块级帮助文本的实例。</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">请打勾
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">提交</button>
+        </form>
+    </div>
+</div>
+
+
+<form action="fileUpload" method="POST" enctype="multipart/form-data">
+    <p>单文件上传：<p/><br/>
+    <input type="file" name="file1"/>
+    <input type="submit" value = "上传"/>
+</form>
+<form method="POST" enctype="multipart/form-data"
+      action="/UploadFiles">
+    <p>多文件上传：<p/>
+    <p>文件1：<input type="file" name="file" /></p>
+    <p>文件2：<input type="file" name="file" /></p>
+    <p><input type="submit" value="上传" /></p>
+</form>
+<a href="/download">下载</a>
+</body>
+
+
+<script>
+
+    $(function () {
+        $('#button1').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "getMessage",
+                // data: {username:$("#username").val(), content:$("#content").val()},
+                // dataType: "json",
+                success: function (data) {
+                    // $('#resText').empty();   //清空resText里面的所有内容
+                    // var html = '';
+                    // $.each(data, function(commentIndex, comment){
+                    //     html += '<div class="comment"><h6>' + comment['username']
+                    //         + ':</h6><p class="para"' + comment['content']
+                    //         + '</p></div>';
+                    // });
+                    // $('#resText').html(html);
+                    $("p").append(data);
+                }
+            });
+        });
+
+        $("#button2").click(function () {
+            $("p").slideToggle();
+        });
+
+
+        $('#user').click(function () {
+            $.ajax({
+                type: "POST",
+                url: "getUserInfo",
+                data: JSON.stringify({name: "dddd", password: "word"}),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    // $('#resText').empty();   //清空resText里面的所有内容
+                    // var html = '';
+                    // $.each(data, function(commentIndex, comment){
+                    //     html += '<div class="comment"><h6>' + comment['username']
+                    //         + ':</h6><p class="para"' + comment['content']
+                    //         + '</p></div>';
+                    // });
+                    // $('#resText').html(html);
+                    $("p").append("<br/>" + data);
+                }
+            });
+        });
+    });
+
+
+</script>
+</html>
