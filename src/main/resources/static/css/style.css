@@ -4172,6 +4172,21 @@ padding: 6px 10px;
   text-align: center;
 }
 
+
+.content-main-hx {
+  /*text-align: center; !*让div内部文字居中*!*/
+  background-color: #f1f2f7;
+  border-radius: 20px;
+  border-top: 1px solid #eee;
+  width: 300px;
+  height: 500px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .stat-elem {
 
     background-color: #fff;
