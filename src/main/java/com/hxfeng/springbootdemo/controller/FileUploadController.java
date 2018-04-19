@@ -13,7 +13,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sound.midi.SysexMessage;
 import java.io.*;
 import java.util.List;
 
@@ -29,14 +28,14 @@ public class FileUploadController {
      */
     @GetMapping("/files")
     public String upload() {
-        return "files";
+        return "index";
     }
 
     /**
      * 实现文件上传
      */
     @RequestMapping("fileUpload")
-    @ResponseBody
+//    @ResponseBody
     public String fileUpload(@RequestParam("fileName") MultipartFile file) {
         if (file.isEmpty()) {
             return "false";
@@ -52,7 +51,7 @@ public class FileUploadController {
         }
         try {
             file.transferTo(dest); //保存文件
-            return "true";
+            return "../static/index";
         } catch (IllegalStateException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -68,7 +67,7 @@ public class FileUploadController {
      * 实现多文件上传
      */
     @RequestMapping(value = "multifileUpload", method = RequestMethod.POST)
-    @ResponseBody
+//    @ResponseBody
     public String multifileUpload(HttpServletRequest request) {
 
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("fileName");
@@ -100,7 +99,7 @@ public class FileUploadController {
                 }
             }
         }
-        return "true";
+        return "../static/index";
     }
 
 
