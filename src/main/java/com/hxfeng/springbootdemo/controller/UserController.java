@@ -12,11 +12,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserController {
     @Autowired
     UserServiceImpl userService;
+
+    @RequestMapping("/getinfo")
+
+    public String getinfo() {
+        return "info";
+
+    }
 
 
     @RequestMapping("/getUserInfo")
@@ -69,6 +77,14 @@ public class UserController {
 
     }
 
+
+    @RequestMapping("/books")
+    //http://localhost:8000/books?category=fantasy&author=Tolkien
+    public String books(@RequestParam Map<String, String> requestParams
+    ) {
+        return requestParams.get("author") + requestParams.get("category");
+
+    }
 
 //    @GetMapping("/greeting")
 //    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
