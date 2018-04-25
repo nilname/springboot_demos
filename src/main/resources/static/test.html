@@ -82,12 +82,12 @@
             $("p").slideToggle();
         });
 
-
+        var birth={year:"2018",day:"09",month:"11"}
         $('#user').click(function () {
             $.ajax({
                 type: "POST",
-                url: "getUserInfo",
-                data: JSON.stringify({name: "dddd", password: "word"}),
+                url: "getUserInfoComplex",
+                data: JSON.stringify({name: "dddd", password: "word",birth:birth}),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {

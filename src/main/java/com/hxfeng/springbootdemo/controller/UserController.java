@@ -3,6 +3,7 @@ package com.hxfeng.springbootdemo.controller;
 import com.hxfeng.springbootdemo.exceptions.MyException;
 import com.hxfeng.springbootdemo.model.GenerUser;
 import com.hxfeng.springbootdemo.model.MyUser;
+import com.hxfeng.springbootdemo.model.MyUserWithBirthDay;
 import com.hxfeng.springbootdemo.service.impl.UserServiceImpl;
 import com.hxfeng.springbootdemo.utils.PageBean;
 import com.github.pagehelper.PageHelper;
@@ -23,6 +24,14 @@ public class UserController {
 
     public String getinfo() {
         return "info";
+
+    }
+
+    @RequestMapping(value = "/getUserInfoComplex" ,method = RequestMethod.POST)
+
+    public String getUserInfo(@RequestBody MyUserWithBirthDay user, BindingResult result) {
+
+        return user.toString();
 
     }
 
