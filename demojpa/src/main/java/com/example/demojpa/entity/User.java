@@ -47,8 +47,5 @@ public class User {
         this.name = name;
         this.age = age;
     }
-// 省略构造函数
-
-    // 省略getter和setter
 
 }
