@@ -21,7 +21,7 @@ public class DemojpaApplicationTests {
 
 	@Test
 	public void test() throws Exception {
-
+		userRepository.deleteAll();
 		// 创建10条记录
 		userRepository.save(new User("AAA", 10));
 		userRepository.save(new User("BBB", 20));
@@ -51,7 +51,7 @@ public class DemojpaApplicationTests {
 
 		// 测试findAll, 查询所有记录, 验证上面的删除是否成功
 		Assert.assertEquals(9, userRepository.findAll().size());
-//		userRepository.deleteAll();
+
 
 	}
 }
