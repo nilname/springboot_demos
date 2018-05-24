@@ -1,0 +1,34 @@
+spring:
+    datasource:
+        name: tests
+        url: jdbc:mysql://localhost:3306/tests?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+
+server:
+  session-timeout: 5
+#    session:
+#      servlet:
+#        filter-order: 0
+
+#
+#    security:
+#      basic:
+#        enabled: false
+#    management:
+#      security:
+#        enabled: false
+
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+server:
+    port: 8040
+
+
+logging:
+  level:
+    org:
+      apache:
+        tomcat: INFO
