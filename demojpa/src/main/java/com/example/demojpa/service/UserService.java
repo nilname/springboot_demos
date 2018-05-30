@@ -15,4 +15,16 @@ public class UserService {
     public List<User> getUsers() {
         return repository.findAll();
     }
+
+
+    public void addUser(String name) {
+        User user = new User();
+        user.setAge(10);
+        user.setName(name);
+        repository.save(user);
+    }
+
+    public User getById(String id) {
+        return repository.findById(Long.parseLong(id)).get();
+    }
 }

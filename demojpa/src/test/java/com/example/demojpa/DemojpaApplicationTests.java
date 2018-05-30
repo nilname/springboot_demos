@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -52,6 +53,21 @@ public class DemojpaApplicationTests {
 		// 测试findAll, 查询所有记录, 验证上面的删除是否成功
 		Assert.assertEquals(9, userRepository.findAll().size());
 
+
+	}
+
+
+
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
+
+
+	@Test
+	public void testRedis() throws Exception {
+
+		// 保存字符串
+		stringRedisTemplate.opsForValue().set("aaa", "111");
+		Assert.assertEquals("111", stringRedisTemplate.opsForValue().get("aaa"));
 
 	}
 }

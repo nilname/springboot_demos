@@ -1,10 +1,11 @@
 package com.example.demojpa.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tbl_user")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,4 +49,8 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
