@@ -49,7 +49,8 @@
 		<module>demojpa</module>
 		<module>demomybatis</module>
 		<module>sercuritydemo</module>
-		<module>validatorAndLogback</module> 
+		<module>validatorAndLogback</module>
+		<module>quartzexamples</module>
 	</modules>
 
 </project>
