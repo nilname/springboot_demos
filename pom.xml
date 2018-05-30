@@ -51,6 +51,7 @@
 		<module>sercuritydemo</module>
 		<module>validatorAndLogback</module>
 		<module>quartzexamples</module>
+		<module>quartzExample</module>
 	</modules>
 
 </project>
