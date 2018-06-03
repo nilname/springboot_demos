@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>my layout</title>
+    <style type="text/css">
+        #main {
+            /*float: left;*/
+            /*float: right;*/
+            background: #383b3f;
+            /*max-width: 600px;*/
+            /*max-height: 300px;*/
+            padding: 50px;
+            width: 100%;
+            height: 50%;
+            margin: 0 auto;
+        }
+
+        .relative1 {
+            background: #888888;
+            position: relative;
+            padding: 50px;
+            width: 100%;
+            height: 50%;
+            margin: 0 auto;
+        }
+        .relative2 {
+            background: #d7fc5b;
+            position: relative;
+            top: -20px;
+            left: 20px;
+            width: 500px;
+            padding: 50px;
+            width: 100%;
+            height: 50%;
+            margin: 0 auto;
+        }
+
+        .container {
+            position: relative;
+        }
+        nav {
+            position: absolute;
+            left: 0px;
+            width: 200px;
+        }
+        section {
+            /* position is static by default */
+            margin-left: 200px;
+        }
+        #footer {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5%;
+            background-color: yellow;
+            width: 100%;
+        }
+
+        #header {
+            display: block;
+            position: fixed;
+            height: 5%;
+            background-color: green;
+            width: 100%;
+        }
+
+        #left {
+            position: fixed;
+            /*bottom:100%;*/
+            left: 0;
+            height: 95%;
+            background-color: rebeccapurple;
+            width: 10%;
+        }
+
+        #right {
+            position: fixed;
+            /*bottom:100%;*/
+            left: 10%;
+            height: 95%;
+            background-color:blue ;
+            width: 90%;
+        }
+
+        #content {
+            position: fixed;
+            /*bottom: 100%;*/
+            left: 0%;
+            height: 95%;
+            background-color: white;
+            width: 100%;
+        }
+        body {
+            margin-bottom: 120px;
+        }
+
+
+
+        .left{
+            width: 200px;
+            height: 600px;
+            background: red;
+            float: left;
+            display: table;
+            text-align: center;
+            line-height: 600px;
+            color: #fff;
+        }
+
+        .right{
+            margin-left: 210px;
+            height: 600px;
+            background: yellow;
+            text-align: center;
+            line-height: 600px;
+        }
+
+
+        .left{
+            width: 200px;height: 300px; background: yellow; float: left;
+        }
+        .right{
+            width: 150px; height: 300px; background: green; float: right;
+        }
+        .middle{
+            height: 300px; background: red; margin-left: 220px; margin-right: 160px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="left">左栏</div>
+<div class="right">右栏</div>
+<div class="middle">中间栏</div>
+
+
+
+<!--<div class="left">定宽</div>-->
+<!--<div class="right">自适应</div>-->
+
+<!--<div>-->
+
+    <!--<div id="header"> header</div>-->
+<!--&lt;!&ndash;<br/>&ndash;&gt;-->
+    <!--<div >-->
+        <!--<div id="left">left</div>-->
+        <!--<div id="right">right</div>-->
+    <!--</div>-->
+    <!--<div id="footer">footer</div>-->
+
+
+<!--</div>-->
+
+<!--<div    id="main">this is main</div>-->
+<!--<div    class="relative1">this is main</div>-->
+<!--<div    class="relative2">this is main</div>-->
+<!--<div    class="relative1">this is main</div>-->
+<!--<div    class="relative2">this is main</div>-->
+
+</body>
+</html>
