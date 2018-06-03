@@ -23,7 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
-
+<dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -44,7 +44,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+</dependencyManagement>
 	<modules>
 		<module>demojpa</module>
 		<module>demomybatis</module>
@@ -52,6 +52,7 @@
 		<module>validatorAndLogback</module>
 		<module>quartzexamples</module>
 		<module>quartzExample</module>
-	</modules>
+        <module>websoketExamples</module>
+    </modules>
 
 </project>
