@@ -52,7 +52,7 @@
 		<module>validatorAndLogback</module>
 <!-- 		<module>quartzexamples</module> -->
 <!-- 		<module>quartzExample</module> -->
-        <module>websoketExamples</module>
+<!--         <module>websoketExamples</module> -->
     </modules>
 
 </project>
