@@ -50,8 +50,8 @@
 		<module>demomybatis</module>
 		<module>sercuritydemo</module>
 		<module>validatorAndLogback</module>
-		<module>quartzexamples</module>
-		<module>quartzExample</module>
+<!-- 		<module>quartzexamples</module> -->
+<!-- 		<module>quartzExample</module> -->
         <module>websoketExamples</module>
     </modules>
 
